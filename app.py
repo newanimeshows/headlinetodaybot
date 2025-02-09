@@ -3,6 +3,10 @@ import requests
 import asyncio
 from telegram import Bot
 import re
+import http.server
+import socketserver
+from http import HTTPStatus
+import threading
 
 # Telegram bot token and channel ID
 BOT_TOKEN = '7024971848:AAHvOTDCMoCn2L9BTrXMB8FzyouAAnwpb2E'
@@ -70,7 +74,31 @@ async def run_scheduler():
             print(f"Posted: {title}")
             await asyncio.sleep(1200)  # Wait 20 minutes before posting the next news article
 
-# Start the bot
-if __name__ == '__main__':
-    print("Bot is running...")
+# Function to run the bot asynchronously
+def start_bot():
     asyncio.run(run_scheduler())
+
+# Simple HTTP server for Render
+PORT = 8080
+
+class Handler(http.server.SimpleHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(HTTPStatus.OK)
+        self.end_headers()
+        self.wfile.write(b'Bot is running!')
+
+# Start the HTTP server in a separate thread
+def start_server():
+    with socketserver.TCPServer(("", PORT), Handler) as httpd:
+        print("Server started at port", PORT)
+        httpd.serve_forever()
+
+if __name__ == '__main__':
+    print("Starting bot and server...")
+
+    # Start the bot in a separate thread
+    bot_thread = threading.Thread(target=start_bot, daemon=True)
+    bot_thread.start()
+
+    # Start the HTTP server
+    start_server()
