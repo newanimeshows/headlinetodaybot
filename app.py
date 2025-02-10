@@ -68,9 +68,9 @@ async def run_scheduler():
             
             posted_news_links.add(link)
             hashtags = generate_hashtags(title)
-            message = f"📰 *{escape_markdown(title)}*\n\n{summary}\n\n🔗 [Read more]({link})\n{hashtags}\n\nJoin us- [Headline Today](https://linktr.ee/headlinetoday)"
+            message = f"📰 *{escape_markdown(title)}*\n\n{summary}\n\n🔗 [Read more]({link})\n\n{hashtags}\n\nJoin us- [Headline Today](https://linktr.ee/headlinetoday)"
             
-            await bot.send_message(chat_id=CHANNEL_ID, text=message, parse_mode='Markdown', disable_web_page_preview=False)
+            await bot.send_message(chat_id=CHANNEL_ID, text=message, parse_mode='Markdown', disable_web_page_preview=True)
             print(f"Posted: {title}")
             await asyncio.sleep(1200)  # Wait 20 minutes before posting the next news article
 
