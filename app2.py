@@ -9,12 +9,12 @@ from http import HTTPStatus
 import threading
 
 # Telegram bot token and channel ID
-BOT_TOKEN = 'YOUR_BOT_TOKEN'
+BOT_TOKEN = '7024971848:AAHvOTDCMoCn2L9BTrXMB8FzyouAAnwpb2E'
 CHANNEL_ID = '@headline_today'
 bot = Bot(token=BOT_TOKEN)
 
 # NewsData.io API Key
-NEWS_API_KEY = 'YOUR_NEWS_API_KEY'
+NEWS_API_KEY = 'pub_685073eff04f970dd66d5f239e10bb1e8dd5d'
 NEWS_API_URL = 'https://newsdata.io/api/1/news'
 
 # Store previously sent news links
