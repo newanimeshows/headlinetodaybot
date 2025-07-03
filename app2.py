@@ -9,6 +9,11 @@ import socketserver
 from http import HTTPStatus
 import threading
 
+
+if not all([TOKEN, CHANNEL_ID, NEWS_API_KEY, NEWS_API_URL]):
+    raise EnvironmentError("One or more environment variables are missing.")
+
+
 # Telegram bot token and channel ID
 TOKEN = os.getenv('BOT_TOKEN')
 CHANNEL_ID = os.getenv('CHANNEL_ID')
