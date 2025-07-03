@@ -15,14 +15,14 @@ if not all([BTOKEN, CHANNEL_ID, NEWS_API_KEY, NEWS_API_URL]):
 
 
 # Telegram bot token and channel ID
-BTOKEN = os.getenv('BOT_TOKEN')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 CHANNEL_ID = os.getenv('CHANNEL_ID')
 
 # NewsData.io API Key
 NEWS_API_KEY = os.getenv('NEWS_API_KEY')
 NEWS_API_URL = os.getenv('NEWS_API_URL')
 
-bot = Bot(token=BTOKEN)
+bot = Bot(token=BOT_TOKEN)
 
 # Store previously sent news links
 posted_news_links = set()
