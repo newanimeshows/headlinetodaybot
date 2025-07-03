@@ -10,7 +10,7 @@ from http import HTTPStatus
 import threading
 
 
-if not all([BTOKEN, CHANNEL_ID, NEWS_API_KEY, NEWS_API_URL]):
+if not all([BOT_TOKEN, CHANNEL_ID, NEWS_API_KEY, NEWS_API_URL]):
     raise EnvironmentError("One or more environment variables are missing.")
 
 
