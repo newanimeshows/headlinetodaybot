@@ -10,7 +10,7 @@ from http import HTTPStatus
 import threading
 
 # Telegram bot token and channel ID
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+TOKEN = os.getenv('BOT_TOKEN')
 CHANNEL_ID = os.getenv('CHANNEL_ID')
 
 # NewsData.io API Key
