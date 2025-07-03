@@ -7,15 +7,19 @@ import http.server
 import socketserver
 from http import HTTPStatus
 import threading
+import os
+
 
 # Telegram bot token and channel ID
-BOT_TOKEN = '7024971848:AAHvOTDCMoCn2L9BTrXMB8FzyouAAnwpb2F'
-CHANNEL_ID = '@headline_today'
-bot = Bot(token=BOT_TOKEN)
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+CHANNEL_ID = os.getenv('CHANNEL_ID')
 
 # NewsData.io API Key
-NEWS_API_KEY = 'pub_685073eff04f970dd66d5f239e10bb1e8dd5d'
-NEWS_API_URL = 'https://newsdata.io/api/1/news'
+NEWS_API_KEY = os.getenv('NEWS_API_KEY')
+NEWS_API_URL = os.getenv('NEWS_API_UR')
+
+bot = Bot(token=BOT_TOKEN)
+
 
 # Store previously sent news links
 posted_news_links = set()
