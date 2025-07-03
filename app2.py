@@ -9,7 +9,7 @@ from http import HTTPStatus
 import threading
 
 # Telegram bot token and channel ID
-BOT_TOKEN = '7024971848:AAHvOTDCMoCn2L9BTrXMB8FzyouAAnwpb2E'
+BOT_TOKEN = 
 CHANNEL_ID = '@headline_today'
 bot = Bot(token=BOT_TOKEN)
 
