@@ -17,7 +17,7 @@ CHANNEL_ID = os.getenv('CHANNEL_ID')
 NEWS_API_KEY = os.getenv('NEWS_API_KEY')
 NEWS_API_URL = os.getenv('NEWS_API_UR')
 
-bot = Bot(token=BOT_TOKEN)
+bot = Bot(token=TOKEN)
 
 # Store previously sent news links
 posted_news_links = set()
